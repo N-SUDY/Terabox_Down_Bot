@@ -12,12 +12,6 @@ const DUMP_CHANNEL_ID = process.env.DUMP_CHANNEL_ID;
 const bot = new TelegramBot(BOT_TOKEN, { polling: true });
 console.log('Bot Connected');
 
-// Ensure the Videos directory exists
-const videosDir = path.join(__dirname, 'Videos');
-if (!fs.existsSync(videosDir)) {
-    fs.mkdirSync(videosDir);
-}
-
 // Function to format the progress bar
 function formatProgressBar(filename, percentage, done, totalSize, status, speed, userMention, userId) {
     const barLength = 10;
